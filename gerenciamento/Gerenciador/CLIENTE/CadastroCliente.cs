@@ -23,7 +23,8 @@ namespace Gerenciador.CLIENTE
 
         public CadastroCliente()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            escrever.Close();
             CadastrarTipos(comboBox_Tipos);
 
         }

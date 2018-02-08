@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.CLIENTE
 {
-    class Contato
+    class Endereco
     {
-        string telefone, email;
-        Endereco endereco;
-        
+        string Rua, Complemento, Referencia;
+        int numero;
     }
 }
