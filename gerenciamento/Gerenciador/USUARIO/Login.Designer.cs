@@ -31,11 +31,12 @@
             this.entrar_botao = new System.Windows.Forms.Button();
             this.botao_sair = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // entrar_botao
             // 
-            this.entrar_botao.Location = new System.Drawing.Point(119, 12);
+            this.entrar_botao.Location = new System.Drawing.Point(228, 366);
             this.entrar_botao.Name = "entrar_botao";
             this.entrar_botao.Size = new System.Drawing.Size(75, 23);
             this.entrar_botao.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // botao_sair
             // 
-            this.botao_sair.Location = new System.Drawing.Point(119, 323);
+            this.botao_sair.Location = new System.Drawing.Point(119, 395);
             this.botao_sair.Name = "botao_sair";
             this.botao_sair.Size = new System.Drawing.Size(75, 23);
             this.botao_sair.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 12);
+            this.button1.Location = new System.Drawing.Point(119, 366);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 23);
             this.button1.TabIndex = 2;
@@ -63,11 +64,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(228, 395);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "CLOSE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 358);
+            this.ClientSize = new System.Drawing.Size(444, 444);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.botao_sair);
             this.Controls.Add(this.entrar_botao);
@@ -85,6 +97,7 @@
         private System.Windows.Forms.Button entrar_botao;
         private System.Windows.Forms.Button botao_sair;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
