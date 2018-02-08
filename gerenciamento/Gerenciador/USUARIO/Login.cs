@@ -37,7 +37,8 @@ namespace Gerenciador
 
         private void botao_sair_Click(object sender, EventArgs e)
         {
-            
+            Environment.Exit(0);
+
         }
 
         private void verificarCadastro(string login, string senha) {

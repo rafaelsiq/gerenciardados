@@ -24,7 +24,6 @@ namespace Gerenciador.CLIENTE
         public CadastroCliente()
         {
             InitializeComponent(); 
-            escrever.Close();
             CadastrarTipos(comboBox_Tipos);
 
         }
@@ -224,6 +223,11 @@ namespace Gerenciador.CLIENTE
 
             return cnpj.EndsWith(digito);
 
+        }
+
+        private void button_sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

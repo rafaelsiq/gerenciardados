@@ -35,7 +35,7 @@
             // 
             // entrar_botao
             // 
-            this.entrar_botao.Location = new System.Drawing.Point(275, 323);
+            this.entrar_botao.Location = new System.Drawing.Point(119, 12);
             this.entrar_botao.Name = "entrar_botao";
             this.entrar_botao.Size = new System.Drawing.Size(75, 23);
             this.entrar_botao.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // botao_sair
             // 
-            this.botao_sair.Location = new System.Drawing.Point(356, 323);
+            this.botao_sair.Location = new System.Drawing.Point(119, 323);
             this.botao_sair.Name = "botao_sair";
             this.botao_sair.Size = new System.Drawing.Size(75, 23);
             this.botao_sair.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(184, 323);
+            this.button1.Location = new System.Drawing.Point(28, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 23);
             this.button1.TabIndex = 2;
@@ -71,8 +71,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.botao_sair);
             this.Controls.Add(this.entrar_botao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

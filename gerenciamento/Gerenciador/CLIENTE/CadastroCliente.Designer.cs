@@ -175,12 +175,14 @@
             // 
             // button_sair
             // 
+            this.button_sair.BackColor = System.Drawing.SystemColors.Control;
             this.button_sair.Location = new System.Drawing.Point(296, 240);
             this.button_sair.Name = "button_sair";
             this.button_sair.Size = new System.Drawing.Size(75, 23);
             this.button_sair.TabIndex = 16;
             this.button_sair.Text = "SAIR";
-            this.button_sair.UseVisualStyleBackColor = true;
+            this.button_sair.UseVisualStyleBackColor = false;
+            this.button_sair.Click += new System.EventHandler(this.button_sair_Click);
             // 
             // CadastroCliente
             // 
@@ -204,6 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox_Tipos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroCliente";
             this.Text = "CadastroCliente";
             this.Load += new System.EventHandler(this.CadastroCliente_Load);
