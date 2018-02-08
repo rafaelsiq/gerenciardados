@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace gerenciamento.Properties
+namespace Gerenciador.Properties
 {
 
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gerenciador.CLIENTE;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gerenciamento
+namespace Gerenciador
 {
     static class Program
     {
@@ -16,7 +17,8 @@ namespace gerenciamento
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Login());
+            Application.Run(new CadastroCliente());
         }
     }
 }
