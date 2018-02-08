@@ -35,6 +35,11 @@ namespace Gerenciador
 
         }
 
+        private void botao_sair_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void verificarCadastro(string login, string senha) {
             //teste
         }

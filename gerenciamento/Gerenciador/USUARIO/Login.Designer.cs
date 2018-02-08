@@ -51,6 +51,7 @@
             this.botao_sair.TabIndex = 1;
             this.botao_sair.Text = "SAIR";
             this.botao_sair.UseVisualStyleBackColor = true;
+            this.botao_sair.Click += new System.EventHandler(this.botao_sair_Click);
             // 
             // button1
             // 

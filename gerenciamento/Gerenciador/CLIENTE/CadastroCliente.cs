@@ -83,10 +83,6 @@ namespace Gerenciador.CLIENTE
             {
                 MessageBox.Show("CPF OU CNPJ NÃO É VALIDO", "ATENÇÃO");
             }
-
-
-
-
             Cliente cliente = new Cliente();
         }
 
