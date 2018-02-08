@@ -20,14 +20,12 @@ namespace Gerenciador.CLIENTE
         Contato contato;
         Cliente cliente;
 
-
         public CadastroCliente()
         {
             InitializeComponent(); 
             CadastrarTipos(comboBox_Tipos);
 
         }
-
         private void CadastroCliente_Load(object sender, EventArgs e)
         {
 
@@ -54,7 +52,6 @@ namespace Gerenciador.CLIENTE
                 
             }
         }
-
         private void botao_cadastrar_Click(object sender, EventArgs e)
         {
             try
@@ -65,16 +62,16 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UM TIPO!", "ATENÇÃO");
-            }
+            } // tipos
             try
             {
-                if (dateTimePicker1.Text.Contains("1753") || dateTimePicker1 == null)
+                if (dateTimePicker1.Text.Contains("2018") || dateTimePicker1 == null)
                     throw new NullReferenceException();
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UMA DATA VALIDA", "ATENÇÃO");
-            }
+            } // data
             try {
                 if (Valida(textBox_cpf.Text) == false || ValidaCnpj(textBox_cpf.Text))
                     throw new NullReferenceException();
@@ -82,10 +79,37 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("CPF OU CNPJ NÃO É VALIDO", "ATENÇÃO");
+            } // cpf
+            try
+            {
+                if (textBox_nome.Text == "" || textBox_cpf.Text==null)
+                    throw new NullReferenceException();
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("DIGITE UM NOME POR FAVOR", "ATENÇÃO");
+            } // nome
+            try
+            {
+                if (textBox_email.Text == "" || textBox_email.Text == null)
+                    throw new NullReferenceException();
+                else if (!textBox_email.Text.Contains("@") || !textBox_email.Text.Contains("."))
+                    throw new FileLoadException();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("DIGITE UM EMAIL POR FAVOR", "ATENÇÃO");
+            }
+            catch (FileLoadException)
+            {
+                MessageBox.Show("DIGITE UM EMAIL VALIDO!", "ATENÇÃO");
+
+            }// email
+
+
+
             Cliente cliente = new Cliente();
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -224,7 +248,6 @@ namespace Gerenciador.CLIENTE
             return cnpj.EndsWith(digito);
 
         }
-
         private void button_sair_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
