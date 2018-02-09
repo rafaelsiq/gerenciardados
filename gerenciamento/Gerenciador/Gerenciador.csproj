@@ -290,7 +290,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\13227-30.jpg" />
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

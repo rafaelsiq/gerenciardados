@@ -18,6 +18,7 @@ namespace Gerenciador
         public Login()
         {
             InitializeComponent();
+            textBox_senha.PasswordChar = '*';
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,9 +31,12 @@ namespace Gerenciador
             verificarCadastro(login, senha);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_cadastrar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FUNCIONARIO.CadastroFuncionario novo = new FUNCIONARIO.CadastroFuncionario();
+            novo.Show();
+            
         }
 
         private void botao_sair_Click(object sender, EventArgs e)
@@ -44,6 +48,11 @@ namespace Gerenciador
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox_senha_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void verificarCadastro(string login, string senha) {
