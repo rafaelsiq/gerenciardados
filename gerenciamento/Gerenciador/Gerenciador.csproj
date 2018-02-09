@@ -77,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FUNCIONARIO\CadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUNCIONARIO\CadastroFuncionario.Designer.cs">
+      <DependentUpon>CadastroFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUNCIONARIO\Funcionario.cs" />
     <Compile Include="PRODUTOS\Produto.cs" />
     <Compile Include="SERVICOS\Servico.cs" />
@@ -91,6 +97,9 @@
     <EmbeddedResource Include="CLIENTE\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FUNCIONARIO\CadastroFuncionario.resx">
+      <DependentUpon>CadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USUARIO\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Connected Services\CorreiosService\AtendeClienteService.wsdl" />
     <None Include="Connected Services\CorreiosService\Gerenciador.CorreiosService.atualizaPagamentoNaEntregaResponse.datasource">
@@ -278,6 +288,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13227-30.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,7 +54,7 @@ namespace Gerenciador.CLIENTE
         }
         private void botao_cadastrar_Click(object sender, EventArgs e)
         {
-            bool naocadastrado = false;
+            bool validador = true;
             try
             {
                 if (comboBox_Tipos.Text == "" || comboBox_Tipos.Text == null)
@@ -63,6 +63,8 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UM TIPO!", "ATENÇÃO");
+                validador = false;
+
             }// tipos
             try
             {
@@ -72,6 +74,8 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UMA DATA VALIDA", "ATENÇÃO");
+                validador = false;
+
             }// data
             try {
                 if (Valida(textBox_cpf.Text) == false || ValidaCnpj(textBox_cpf.Text))
@@ -80,6 +84,8 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("CPF OU CNPJ NÃO É VALIDO", "ATENÇÃO");
+                validador = false;
+
             }// cpf
             try
             {
@@ -89,6 +95,8 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("DIGITE UM NOME POR FAVOR", "ATENÇÃO");
+                validador = false;
+
             }// nome
             try
             {
@@ -100,10 +108,14 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("DIGITE UM EMAIL POR FAVOR", "ATENÇÃO");
+                validador = false;
+
             }
             catch (FileLoadException)
             {
                 MessageBox.Show("DIGITE UM EMAIL VALIDO!", "ATENÇÃO");
+                validador = false;
+
 
             }// email
             try
@@ -118,39 +130,56 @@ namespace Gerenciador.CLIENTE
             catch (System.ServiceModel.FaultException erro)
             {
                 MessageBox.Show("NÃO É POSSIVEL CADASTRAR COM ENDEREÇO INCOMPLETO\n" + erro.Message, "ATENCAO");
+                validador = false;
 
             }
             catch (NullReferenceException) {
                 MessageBox.Show("NÃO É POSSIVEL CADASTRAR SEM UM NUMERO!\nDIGITE UM NUMERO VALIDO!");
+                validador = false;
+
             }// endereco
              // verificar se há cadastro no arquivo
-            string xi = textBox_cpf.Text;
-
             try
             {
                 arquivo = new FileStream("clientes.txt", FileMode.Open);
                 ler = new StreamReader(arquivo);
                 string tudo = ler.ReadToEnd();
-                
+                if (tudo.Contains(textBox_cpf.Text))
+                {
+                    MessageBox.Show("CLIENTE JA CADASTRADO!");
+                    validador = false;
+
+
+                }
+
             }
             catch (FileNotFoundException)
             {
+                arquivo = new FileStream("clientes.txt", FileMode.Create);
+                validador = false;
 
+            }
+            finally
+            {
+                arquivo.Close();
             }
 
             //update
-            arquivo = new FileStream("clientes.txt", FileMode.Append);
-            escrever = new StreamWriter(arquivo);
-            escrever.WriteLine("#"+comboBox_Tipos.Text+"#"+textBox_nome.Text+"#"+textBox_cpf.Text+"#"+dateTimePicker1.Text+"#"+textBox_email.Text+"#"+textBox_telefone.Text+"#"+textBox_cpf.Text+"#"+textBox_bairro.Text+"#"
-            +textBox_uf.Text+"#"+textBox_rua.Text+"#"+textBox_numero.Text+"#"+textBox_complemento.Text+"#"+textBox_cidade.Text+"#"+textBox_referencia.Text);
-            escrever.Close();
-            DateTime data = dateTimePicker1.Value;
-            
-            Endereco endereco = new Endereco(textBox_rua.Text,textBox_bairro.Text,textBox_uf.Text,textBox_cidade.Text,textBox_complemento.Text,textBox_referencia.Text,Convert.ToInt32(textBox_numero.Text));
-            Contato contato = new Contato(textBox_telefone.Text, textBox_email.Text,endereco);
-            Cliente cliente = new Cliente(textBox_nome.Text,comboBox_Tipos.Text,Convert.ToInt32(textBox_cpf.Text), data, contato);
-            arquivo.Close();
-            MessageBox.Show("CADASTRO EFETUADO!");
+            if (validador == true)
+            {
+                arquivo = new FileStream("clientes.txt", FileMode.Append);
+                escrever = new StreamWriter(arquivo);
+                escrever.WriteLine("#" + comboBox_Tipos.Text + "#" + textBox_nome.Text + "#" + textBox_cpf.Text + "#" + dateTimePicker1.Text + "#" + textBox_email.Text + "#" + textBox_telefone.Text + "#" + textBox_cpf.Text + "#" + textBox_bairro.Text + "#"
+                + textBox_uf.Text + "#" + textBox_rua.Text + "#" + textBox_numero.Text + "#" + textBox_complemento.Text + "#" + textBox_cidade.Text + "#" + textBox_referencia.Text);
+                escrever.Close();
+                DateTime data = dateTimePicker1.Value;
+
+                Endereco endereco = new Endereco(textBox_rua.Text, textBox_bairro.Text, textBox_uf.Text, textBox_cidade.Text, textBox_complemento.Text, textBox_referencia.Text, Convert.ToInt32(textBox_numero.Text));
+                Contato contato = new Contato(textBox_telefone.Text, textBox_email.Text, endereco);
+                Cliente cliente = new Cliente(textBox_nome.Text, comboBox_Tipos.Text, Convert.ToInt32(textBox_cpf.Text), data, contato);
+                arquivo.Close();
+                MessageBox.Show("CADASTRO EFETUADO!");
+            }
             Close();
 
             
@@ -159,7 +188,7 @@ namespace Gerenciador.CLIENTE
         {
 
         }
-        public bool Valida(string cpf)
+        public static bool Valida(string cpf)
 
         {
 
@@ -226,7 +255,7 @@ namespace Gerenciador.CLIENTE
             return cpf.EndsWith(digito);
 
         }
-        public bool ValidaCnpj(string cnpj)
+        public static bool ValidaCnpj(string cnpj)
 
         {
 

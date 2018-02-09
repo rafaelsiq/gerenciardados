@@ -60,7 +60,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox_cidade = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_cep = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // comboBox_Tipos
@@ -134,7 +134,7 @@
             // 
             // botao_cadastrar
             // 
-            this.botao_cadastrar.Location = new System.Drawing.Point(57, 397);
+            this.botao_cadastrar.Location = new System.Drawing.Point(67, 397);
             this.botao_cadastrar.Name = "botao_cadastrar";
             this.botao_cadastrar.Size = new System.Drawing.Size(94, 23);
             this.botao_cadastrar.TabIndex = 9;
@@ -195,7 +195,7 @@
             // button_sair
             // 
             this.button_sair.BackColor = System.Drawing.SystemColors.Window;
-            this.button_sair.Location = new System.Drawing.Point(296, 397);
+            this.button_sair.Location = new System.Drawing.Point(336, 397);
             this.button_sair.Name = "button_sair";
             this.button_sair.Size = new System.Drawing.Size(75, 23);
             this.button_sair.TabIndex = 16;
@@ -338,16 +338,16 @@
             this.textBox_cidade.TabIndex = 31;
             this.textBox_cidade.Click += new System.EventHandler(this.textBox_rua_TextChanged);
             // 
-            // linkLabel1
+            // linkLabel_cep
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(64, 371);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(75, 13);
-            this.linkLabel1.TabIndex = 33;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Consultar CEP";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel_cep.AutoSize = true;
+            this.linkLabel_cep.Location = new System.Drawing.Point(64, 371);
+            this.linkLabel_cep.Name = "linkLabel_cep";
+            this.linkLabel_cep.Size = new System.Drawing.Size(75, 13);
+            this.linkLabel_cep.TabIndex = 33;
+            this.linkLabel_cep.TabStop = true;
+            this.linkLabel_cep.Text = "Consultar CEP";
+            this.linkLabel_cep.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // CadastroCliente
             // 
@@ -355,7 +355,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(444, 444);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkLabel_cep);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox_cidade);
             this.Controls.Add(this.label15);
@@ -432,6 +432,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox_cidade;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel_cep;
     }
 }
