@@ -14,7 +14,6 @@ namespace Gerenciador
 {
     public partial class Login : Form
     {
-        string login, senha;
         public Login()
         {
             InitializeComponent();
@@ -28,15 +27,7 @@ namespace Gerenciador
 
         private void entrar_botao_Click(object sender, EventArgs e)
         {
-            verificarCadastro(login, senha);
-        }
-
-        private void button_cadastrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FUNCIONARIO.CadastroFuncionario novo = new FUNCIONARIO.CadastroFuncionario();
-            novo.Show();
-            
+            verificarCadastro(textBox_login.Text, textBox_senha.Text);
         }
 
         private void botao_sair_Click(object sender, EventArgs e)
@@ -56,7 +47,8 @@ namespace Gerenciador
         }
 
         private void verificarCadastro(string login, string senha) {
-            //teste
+            
+
         }
     }
 }

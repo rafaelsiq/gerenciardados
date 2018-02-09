@@ -104,7 +104,8 @@ namespace Gerenciador.FUNCIONARIO
                 if (tudo.Contains(textBox_cpf.Text))
                 {
                     MessageBox.Show("FUNCIONARIO JA CADASTRADO!");
-                    
+                    validador = false;
+
                 }
             }
             catch (FileNotFoundException)
@@ -130,6 +131,7 @@ namespace Gerenciador.FUNCIONARIO
                 arquivo.Close();
                 MessageBox.Show("CADASTRO EFETUADO!");
             }
+            
 
             Close();
             

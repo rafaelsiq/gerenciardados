@@ -30,7 +30,6 @@
         {
             this.entrar_botao = new System.Windows.Forms.Button();
             this.botao_sair = new System.Windows.Forms.Button();
-            this.button_cadastrar = new System.Windows.Forms.Button();
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_senha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +40,7 @@
             // 
             // entrar_botao
             // 
-            this.entrar_botao.Location = new System.Drawing.Point(147, 313);
+            this.entrar_botao.Location = new System.Drawing.Point(151, 313);
             this.entrar_botao.Name = "entrar_botao";
             this.entrar_botao.Size = new System.Drawing.Size(75, 23);
             this.entrar_botao.TabIndex = 0;
@@ -51,23 +50,13 @@
             // 
             // botao_sair
             // 
-            this.botao_sair.Location = new System.Drawing.Point(357, 409);
+            this.botao_sair.Location = new System.Drawing.Point(241, 313);
             this.botao_sair.Name = "botao_sair";
             this.botao_sair.Size = new System.Drawing.Size(75, 23);
             this.botao_sair.TabIndex = 1;
             this.botao_sair.Text = "SAIR";
             this.botao_sair.UseVisualStyleBackColor = true;
             this.botao_sair.Click += new System.EventHandler(this.botao_sair_Click);
-            // 
-            // button_cadastrar
-            // 
-            this.button_cadastrar.Location = new System.Drawing.Point(228, 313);
-            this.button_cadastrar.Name = "button_cadastrar";
-            this.button_cadastrar.Size = new System.Drawing.Size(85, 23);
-            this.button_cadastrar.TabIndex = 2;
-            this.button_cadastrar.Text = "CADASTRAR";
-            this.button_cadastrar.UseVisualStyleBackColor = true;
-            this.button_cadastrar.Click += new System.EventHandler(this.button_cadastrar_Click);
             // 
             // textBox_login
             // 
@@ -122,7 +111,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_senha);
             this.Controls.Add(this.textBox_login);
-            this.Controls.Add(this.button_cadastrar);
             this.Controls.Add(this.botao_sair);
             this.Controls.Add(this.entrar_botao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,7 +128,6 @@
 
         private System.Windows.Forms.Button entrar_botao;
         private System.Windows.Forms.Button botao_sair;
-        private System.Windows.Forms.Button button_cadastrar;
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_senha;
         private System.Windows.Forms.Label label1;
