@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.IO;
 using System.Web;
+using Gerenciador.USUARIO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,12 @@ namespace Gerenciador
 {
     public partial class Login : Form
     {
+        StreamReader ler;
+        FileStream arquivo;
+        StreamWriter escrever;
+
+
+
         public Login()
         {
             InitializeComponent();
@@ -27,7 +34,15 @@ namespace Gerenciador
 
         private void entrar_botao_Click(object sender, EventArgs e)
         {
-            verificarCadastro(textBox_login.Text, textBox_senha.Text);
+            if (verificarCadastro(textBox_login.Text, textBox_senha.Text) == true)
+            {
+                this.Hide();
+                menu inicial = new menu();
+                inicial.Show();
+            }else
+            {
+                MessageBox.Show("Senha invalida!", "ALERTA");
+            }
         }
 
         private void botao_sair_Click(object sender, EventArgs e)
@@ -46,9 +61,22 @@ namespace Gerenciador
 
         }
 
-        private void verificarCadastro(string login, string senha) {
-            
+        private bool verificarCadastro(string login, string senha) {
+            arquivo = new FileStream("funcionarios.txt", FileMode.Open);
+            ler = new StreamReader(arquivo);
+            string linha;
+            do
+            {
+                linha = ler.ReadLine();
+                if (linha != null)
+                    if (linha.Contains(login) && linha.Contains(senha))
+                    return true;
 
+            } while (linha != null);
+            arquivo.Close();
+            ler.Close();
+
+            return false;
         }
     }
 }

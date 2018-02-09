@@ -122,7 +122,7 @@ namespace Gerenciador.FUNCIONARIO
                 arquivo = new FileStream("funcionarios.txt", FileMode.Append);
                 escrever = new StreamWriter(arquivo);
                 escrever.WriteLine("#" + textBox_nome.Text + "#" + textBox_cpf.Text + "#" + textBox_email.Text + "#" + textBox_telefone.Text + "#" + textBox_cpf.Text + "#" + textBox_bairro.Text + "#"
-                + textBox_uf.Text + "#" + textBox_rua.Text + "#" + textBox_numero.Text + "#" + textBox_complemento.Text + "#" + textBox_cidade.Text + "#" + textBox_referencia.Text);
+                + textBox_uf.Text + "#" + textBox_rua.Text + "#" + textBox_numero.Text + "#" + textBox_complemento.Text + "#" + textBox_cidade.Text + "#" + textBox_referencia.Text+textBox_login.Text+"#"+textBox_senha.Text);
                 escrever.Close();
 
                 Endereco endereco = new Endereco(textBox_rua.Text, textBox_bairro.Text, textBox_uf.Text, textBox_cidade.Text, textBox_complemento.Text, textBox_referencia.Text, Convert.ToInt32(textBox_numero.Text));

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gerenciador.USUARIO
 {
-    public partial class Menu : Form
+    public partial class menu : Form
     {
-        public Menu()
+        public menu()
         {
             InitializeComponent();
         }
@@ -21,5 +21,6 @@ namespace Gerenciador.USUARIO
         {
 
         }
+
     }
 }
