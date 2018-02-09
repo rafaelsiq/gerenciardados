@@ -41,7 +41,7 @@ namespace Gerenciador
                 inicial.Show();
             }else
             {
-                MessageBox.Show("Senha invalida!", "ALERTA");
+                MessageBox.Show("Senha ou Login\nInvalidos!", "ALERTA");
             }
         }
 

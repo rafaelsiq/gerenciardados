@@ -53,7 +53,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "CRIAR SISTEMAS DE SEGURANÇA";
             // 
-            // Menu
+            // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -61,7 +61,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Menu";
+            this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

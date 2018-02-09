@@ -21,7 +21,7 @@ namespace Gerenciador
             Application.Run(new Login());
             Application.Run(new CadastroCliente());
             Application.Run(new CadastroFuncionario());
-            Application.Run(new Gerenciador.USUARIO.menu());
+            Application.Run(new USUARIO.menu());
         }
     }
 }
