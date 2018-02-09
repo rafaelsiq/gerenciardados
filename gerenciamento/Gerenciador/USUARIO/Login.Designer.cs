@@ -40,7 +40,7 @@
             // 
             // entrar_botao
             // 
-            this.entrar_botao.Location = new System.Drawing.Point(151, 313);
+            this.entrar_botao.Location = new System.Drawing.Point(141, 321);
             this.entrar_botao.Name = "entrar_botao";
             this.entrar_botao.Size = new System.Drawing.Size(75, 23);
             this.entrar_botao.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // botao_sair
             // 
-            this.botao_sair.Location = new System.Drawing.Point(241, 313);
+            this.botao_sair.Location = new System.Drawing.Point(231, 321);
             this.botao_sair.Name = "botao_sair";
             this.botao_sair.Size = new System.Drawing.Size(75, 23);
             this.botao_sair.TabIndex = 1;
@@ -60,14 +60,14 @@
             // 
             // textBox_login
             // 
-            this.textBox_login.Location = new System.Drawing.Point(202, 240);
+            this.textBox_login.Location = new System.Drawing.Point(192, 248);
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(100, 20);
             this.textBox_login.TabIndex = 4;
             // 
             // textBox_senha
             // 
-            this.textBox_senha.Location = new System.Drawing.Point(202, 266);
+            this.textBox_senha.Location = new System.Drawing.Point(192, 274);
             this.textBox_senha.Name = "textBox_senha";
             this.textBox_senha.Size = new System.Drawing.Size(100, 20);
             this.textBox_senha.TabIndex = 5;
@@ -76,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 247);
+            this.label1.Location = new System.Drawing.Point(148, 255);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 6;
@@ -85,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 273);
+            this.label2.Location = new System.Drawing.Point(148, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 7;
@@ -94,7 +94,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Gerenciador.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(118, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(108, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 149);
             this.pictureBox1.TabIndex = 8;
