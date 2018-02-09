@@ -9,6 +9,6 @@ namespace Gerenciador.CLIENTE
     class Endereco
     {
         string Rua, Complemento, Referencia;
-        int numero;
+        int numero; 
     }
 }
