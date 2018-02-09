@@ -54,6 +54,7 @@ namespace Gerenciador.CLIENTE
         }
         private void botao_cadastrar_Click(object sender, EventArgs e)
         {
+            bool naocadastrado = false;
             try
             {
                 if (comboBox_Tipos.Text == "" || comboBox_Tipos.Text == null)
@@ -62,7 +63,7 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UM TIPO!", "ATENÇÃO");
-            } // tipos
+            }// tipos
             try
             {
                 if (dateTimePicker1.Text.Contains("2018") || dateTimePicker1 == null)
@@ -71,7 +72,7 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("ESCOLHA UMA DATA VALIDA", "ATENÇÃO");
-            } // data
+            }// data
             try {
                 if (Valida(textBox_cpf.Text) == false || ValidaCnpj(textBox_cpf.Text))
                     throw new NullReferenceException();
@@ -79,7 +80,7 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("CPF OU CNPJ NÃO É VALIDO", "ATENÇÃO");
-            } // cpf
+            }// cpf
             try
             {
                 if (textBox_nome.Text == "" || textBox_cpf.Text==null)
@@ -88,7 +89,7 @@ namespace Gerenciador.CLIENTE
             catch (NullReferenceException)
             {
                 MessageBox.Show("DIGITE UM NOME POR FAVOR", "ATENÇÃO");
-            } // nome
+            }// nome
             try
             {
                 if (textBox_email.Text == "" || textBox_email.Text == null)
@@ -105,10 +106,54 @@ namespace Gerenciador.CLIENTE
                 MessageBox.Show("DIGITE UM EMAIL VALIDO!", "ATENÇÃO");
 
             }// email
+            try
+            {
 
+                var cep = new CorreiosService.AtendeClienteClient();
+                var respostaCorreios = cep.consultaCEP(textBox_cep.Text);
+                if (textBox_numero.Text == "" || textBox_numero == null || textBox_rua.Text == "" || textBox_rua == null)
+                    throw new NullReferenceException();
 
+            }
+            catch (System.ServiceModel.FaultException erro)
+            {
+                MessageBox.Show("NÃO É POSSIVEL CADASTRAR COM ENDEREÇO INCOMPLETO\n" + erro.Message, "ATENCAO");
 
-            Cliente cliente = new Cliente();
+            }
+            catch (NullReferenceException) {
+                MessageBox.Show("NÃO É POSSIVEL CADASTRAR SEM UM NUMERO!\nDIGITE UM NUMERO VALIDO!");
+            }// endereco
+             // verificar se há cadastro no arquivo
+            string xi = textBox_cpf.Text;
+
+            try
+            {
+                arquivo = new FileStream("clientes.txt", FileMode.Open);
+                ler = new StreamReader(arquivo);
+                string tudo = ler.ReadToEnd();
+                
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+
+            //update
+            arquivo = new FileStream("clientes.txt", FileMode.Append);
+            escrever = new StreamWriter(arquivo);
+            escrever.WriteLine("#"+comboBox_Tipos.Text+"#"+textBox_nome.Text+"#"+textBox_cpf.Text+"#"+dateTimePicker1.Text+"#"+textBox_email.Text+"#"+textBox_telefone.Text+"#"+textBox_cpf.Text+"#"+textBox_bairro.Text+"#"
+            +textBox_uf.Text+"#"+textBox_rua.Text+"#"+textBox_numero.Text+"#"+textBox_complemento.Text+"#"+textBox_cidade.Text+"#"+textBox_referencia.Text);
+            escrever.Close();
+            DateTime data = dateTimePicker1.Value;
+            
+            Endereco endereco = new Endereco(textBox_rua.Text,textBox_bairro.Text,textBox_uf.Text,textBox_cidade.Text,textBox_complemento.Text,textBox_referencia.Text,Convert.ToInt32(textBox_numero.Text));
+            Contato contato = new Contato(textBox_telefone.Text, textBox_email.Text,endereco);
+            Cliente cliente = new Cliente(textBox_nome.Text,comboBox_Tipos.Text,Convert.ToInt32(textBox_cpf.Text), data, contato);
+            arquivo.Close();
+            MessageBox.Show("CADASTRO EFETUADO!");
+            Close();
+
+            
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -251,6 +296,31 @@ namespace Gerenciador.CLIENTE
         private void button_sair_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+        private void textBox_rua_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var cep = new CorreiosService.AtendeClienteClient();
+                var respostaCorreios = cep.consultaCEP(textBox_cep.Text);
+                textBox_bairro.Text = respostaCorreios.bairro;
+                textBox_complemento.Text = respostaCorreios.complemento;
+                textBox_rua.Text = respostaCorreios.end;
+                textBox_cidade.Text = respostaCorreios.cidade;
+                textBox_referencia.Text = respostaCorreios.complemento2;
+                textBox_uf.Text = respostaCorreios.uf;
+            }
+            catch(System.ServiceModel.FaultException erro) {
+                 MessageBox.Show("DIGITE UM CEP VALIDO\n"+erro.Message,"ATENCAO");
+
+            }
+
+        }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           string url = "http://www.buscacep.correios.com.br/sistemas/buscacep/";
+           string navegador = "chrome";
+           System.Diagnostics.Process.Start(navegador,@url);
         }
     }
 }
