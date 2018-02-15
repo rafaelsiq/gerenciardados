@@ -14,13 +14,19 @@ namespace Gerenciador.USUARIO
     {
         public menu()
         {
+           
+            this.Width = Screen.PrimaryScreen.Bounds.Width;
             InitializeComponent();
+            pictureBox_faixa.Width = Screen.PrimaryScreen.Bounds.Width;
+            label_razaosocial.Width = pictureBox_faixa.Width / 2;
+            label_razaosocial.Height = pictureBox_faixa.Height / 2;
+            
+
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
