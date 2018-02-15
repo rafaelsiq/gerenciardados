@@ -26,22 +26,26 @@ namespace Gerenciador.USUARIO
             int x = this.label_razaosocial.Text.Length;
             x *= 5;
             this.label_razaosocial.Location = new System.Drawing.Point(Screen.PrimaryScreen.Bounds.Width/2-x, 9);
+            this.button_sair.Location = new System.Drawing.Point(Screen.PrimaryScreen.Bounds.Width -100, 49);
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
 
         }
-
         private void panel_cliente_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             panel_cliente.Visible = true;
             panel_cliente.Location = new Point(0, 40);
+        }
+
+        private void button_sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

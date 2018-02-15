@@ -32,7 +32,10 @@
             this.label_razaosocial = new System.Windows.Forms.Label();
             this.panel_cliente = new System.Windows.Forms.Panel();
             this.button_clientes = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button_sair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_faixa)).BeginInit();
+            this.panel_cliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox_faixa
@@ -57,6 +60,7 @@
             // 
             // panel_cliente
             // 
+            this.panel_cliente.Controls.Add(this.button1);
             this.panel_cliente.Location = new System.Drawing.Point(0, 88);
             this.panel_cliente.Name = "panel_cliente";
             this.panel_cliente.Size = new System.Drawing.Size(1777, 857);
@@ -66,6 +70,7 @@
             // 
             // button_clientes
             // 
+            this.button_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clientes.Location = new System.Drawing.Point(12, 46);
             this.button_clientes.Name = "button_clientes";
             this.button_clientes.Size = new System.Drawing.Size(75, 23);
@@ -74,12 +79,33 @@
             this.button_clientes.UseVisualStyleBackColor = true;
             this.button_clientes.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button_sair
+            // 
+            this.button_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_sair.Location = new System.Drawing.Point(1689, 46);
+            this.button_sair.Name = "button_sair";
+            this.button_sair.Size = new System.Drawing.Size(75, 23);
+            this.button_sair.TabIndex = 5;
+            this.button_sair.Text = "SAIR";
+            this.button_sair.UseVisualStyleBackColor = true;
+            this.button_sair.Click += new System.EventHandler(this.button_sair_Click);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1776, 888);
             this.ControlBox = false;
+            this.Controls.Add(this.button_sair);
             this.Controls.Add(this.panel_cliente);
             this.Controls.Add(this.label_razaosocial);
             this.Controls.Add(this.pictureBox_faixa);
@@ -91,6 +117,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_faixa)).EndInit();
+            this.panel_cliente.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +128,7 @@
         private System.Windows.Forms.Label label_razaosocial;
         private System.Windows.Forms.Panel panel_cliente;
         private System.Windows.Forms.Button button_clientes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_sair;
     }
 }
